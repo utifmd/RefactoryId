@@ -89,12 +89,12 @@ let jsonData = [
     }
   ]
 
-
 let nomor1 = jsonData
   .filter(user => user.profile.phones.length === 0)
   .map(user =>
       user.profile.full_name
   )
+console.log("\n\nFind users who don't have any phone numbers. ")
 console.log(nomor1)
 
 let nomor2 = jsonData
@@ -102,6 +102,7 @@ let nomor2 = jsonData
   .map(user =>
       user.profile.full_name
   )
+console.log("\n\nFind users who have articles. ")
 console.log(nomor2)
 
 let nomor3 = jsonData
@@ -109,16 +110,19 @@ let nomor3 = jsonData
   .map(user =>
       user.profile.full_name
   )
+console.log("\n\nFind users who have 'annis' on their name. ")
 console.log(nomor3)
 
 let nomor4 = jsonData
   .filter(user => user["articles:"].some(article => article.published_at.includes(2020)))
   .map(user => user.profile.full_name)
+console.log("\n\nFind users who have articles on the year 2020.")
 console.log(nomor4)
 
 let nomor5 = jsonData
   .filter(user => user.profile.birthday.split("-")[0] === "1986")
   .map(user => user.profile.full_name)
+console.log("\n\nFind users who are born in 1986. ")
 console.log(nomor5)
 
 let nomor6 = []
@@ -127,6 +131,7 @@ let nomor6 = []
           nomor6.push(dataArticle)
       })
   )
+console.log("\n\nFind articles that contain tips on the title.")
 console.log(nomor6)
 
 let nomor7 = []
@@ -135,4 +140,5 @@ let nomor7 = []
           nomor7.push(dataArticle)
       })
   )
+console.log("\n\nFind articles published before August 2019.")
 console.log(nomor7)

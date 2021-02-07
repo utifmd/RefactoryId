@@ -100,24 +100,29 @@ indonesianDate = (timeStamp) => {
 let nomor1 = jsonData
     .filter(({placement}) => placement.name === "Meeting Room")
     .map(({name}) => name)
+console.log("\n\nFind items in the Meeting Room.")
 console.log(nomor1)
 
 let nomor2 = jsonData
     .filter(({type}) => type === "electronic")
     .map(({name}) => name)
+console.log("\n\nFind all electronic devices.")
 console.log(nomor2)
 
 let nomor3 = jsonData
     .filter(({type}) => type === "furniture")
     .map(({name}) => name)
+console.log("\n\nFind all the furniture.")
 console.log(nomor3)
 
 let nomor4 = jsonData
     .filter(({purchased_at}) => indonesianDate(purchased_at) === "16 Januari 2020")
     .map(({name}) => name)
+console.log("\n\nFind all items were purchased on 16 Januari 2020.")
 console.log(nomor4)
 
 let nomor5 = jsonData
     .filter(({tags}) => tags.includes("brown"))
     .map(({name}) => name)
+console.log("\n\nFind all items with brown color.")
 console.log(nomor5)
