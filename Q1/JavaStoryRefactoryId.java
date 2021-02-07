@@ -20,12 +20,16 @@ class JavaStoryRefactoryId{
 		while(true) {
 			System.out.print("Enter item: ");
 			String food = scanner.nextLine(); //"Nasi";
+			
 			System.out.print("Enter "+food+" price: ");
-			String price = scanner.nextLine(); //"Nasi";
+			String price = scanner.nextLine(); //"Rp.20.000";
             
 			mapItem.put(food, price);
 
-			if(food.equals("exit") || price.equals("exit")) {
+			System.out.println("== Press ENTER for more items or Type EXIT to finish ==");
+			String isMore = scanner.nextLine(); //"Rp.20.000";
+
+			if(isMore.toLowerCase().equals("exit")) {
 				break;
 			}
 		}
@@ -36,7 +40,7 @@ class JavaStoryRefactoryId{
 		System.out.printf("%-12s %18s %n", "Nama Kasir: ", wrapText(strCashier, 18));
 		System.out.println(String.format("%30s", "=============================="));
 		
-		for(Map.Entry item : mapItem.entrySet()) { //(int i = 0; i < mapItem.size(); i++){
+		for(Map.Entry item : mapItem.entrySet()) {
 			System.out.println(String.format("%-"+(30-item.getKey().toString().length())+"s", item.getKey()).replaceAll("\\s(?=\\s+$|$)", ".")+item.getValue());
 		}
 	}
