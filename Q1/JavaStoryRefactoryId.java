@@ -21,28 +21,30 @@ class JavaStoryRefactoryId{
 
 		System.out.print("Enter cashier name: ");
 		String strCashier = scanner.nextLine();// "Jokowi dodo";
-
-		System.out.print("Enter item: ");
-		String strItem = scanner.nextLine(); //"Nasi";
-
-		System.out.print("Enter the "+strItem+" price: ");
-		String strPrice = scanner.nextLine(); //"Rp.5.000";
+		
+		List<String> mapItem = new ArrayList<>();
 
 		while(true) {
+			System.out.print("Enter item: ");
+			String masakan = scanner.nextLine(); //"Nasi";
+            mapItem.add(masakan);
 
-			if(strItem.equals("exit")) {
+			if(masakan.equals("exit")) {
 				break;
 			}
 		}
 
-		String arr[] = {strItem};
+		// String arr[] = {strItem};
 	
 		System.out.println(String.format("%30s", "=============================="));
 		System.out.printf("%27s %n", wrapText(strResto, 30));
 		System.out.printf("%-10s %20s %n", "Tanggal : ", wrapText(strDate, 20));
 		System.out.printf("%-12s %18s %n", "Nama Kasir: ", wrapText(strCashier, 18));
 		System.out.println(String.format("%30s", "=============================="));
-		for(String s:arr) System.out.println(String.format("%-"+(30-strPrice.length())+"s", s).replaceAll("\\s(?=\\s+$|$)", ".")+strPrice);
+		
+		for(int i = 0; i < mapItem.size(); i++){
+			System.out.println(String.format("%-"+(30-mapItem.get(i).length())+"s", mapItem.get(i)).replaceAll("\\s(?=\\s+$|$)", ".")+mapItem.get(i));
+		}
 	}
 
 	private static String wrapText(String text, int max){
