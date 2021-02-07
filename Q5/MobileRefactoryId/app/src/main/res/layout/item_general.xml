@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:paddingHorizontal="8dp"
         android:layout_height="wrap_content">
-        <TextView
+        <TextView android:id="@+id/textTime"
             android:text="@string/_09_00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -35,7 +35,7 @@
             android:padding="8dp"
             android:background="#DBE6FF"
             android:layout_height="wrap_content">
-            <TextView
+            <TextView android:id="@+id/textItemTitle"
                 android:textSize="12sp"
                 android:text="@string/daily_stand_up"
                 android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                 android:textStyle="bold"
                 android:layout_height="wrap_content"/>
             <Space android:layout_width="match_parent" android:layout_height="8dp"/>
-            <TextView
+            <TextView android:id="@+id/textItemSubtitle"
                 android:textSize="10sp"
                 android:text="@string/_09_00_09_30"
                 android:textColor="@color/primary"
@@ -64,7 +64,7 @@
                 android:tint="#FB3453"
                 android:layout_width="14dp"
                 android:layout_height="14dp"/>
-            <TextView
+            <TextView android:id="@+id/textComplete"
                 android:textSize="10sp"
                 android:textColor="#FB3453"
                 android:text="@string/complete"
