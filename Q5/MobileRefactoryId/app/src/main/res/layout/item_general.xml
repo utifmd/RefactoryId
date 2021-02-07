@@ -53,13 +53,13 @@
         <Space
             android:layout_width="8dp"
             android:layout_height="wrap_content"/>
-        <LinearLayout
+        <LinearLayout android:id="@+id/backgroundComplete"
             android:padding="8dp"
             android:layout_width="81dp"
             android:gravity="center"
             android:background="#FEEAEB"
             android:layout_height="wrap_content">
-            <ImageView
+            <ImageView android:id="@+id/ivComplete"
                 android:src="@drawable/ic_baseline_check_24"
                 android:tint="#FB3453"
                 android:layout_width="14dp"

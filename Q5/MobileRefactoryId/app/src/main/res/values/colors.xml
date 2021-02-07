@@ -10,5 +10,7 @@
 
 
     <color name="primary">#0442D0</color>
+    <color name="bg_complete">#F0F3F8</color>
+    <color name="tx_complete">#D3D5DB</color>
 
 </resources>

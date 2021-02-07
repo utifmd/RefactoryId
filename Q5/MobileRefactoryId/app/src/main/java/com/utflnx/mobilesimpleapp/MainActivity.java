@@ -35,20 +35,14 @@ public class MainActivity extends AppCompatActivity{
         HeaderTitleModelObject headerTitleModel = new HeaderTitleModelObject();
         headerTitleModel.setModel(new HeaderTitleModel("Task List"));
 
-        item1.setTitle("Daily Stand Up");
-        item1.setComplete(false);
-        item1.setSubtitle("09.00 - 09.30");
-        item1.setTime("09.00");
-
-        item2.setTitle("Meeting Client A");
-        item2.setComplete(false);
-        item2.setSubtitle("10.00 - 19.30");
-        item2.setTime("10.00");
-
-        listObjects.add(item1);
-        //listObjects.add(headerCalendarModel);
-        listObjects.add(item2);
-        //listObjects.add(headerTitleModel);
+        listObjects.add(headerCalendarModel);
+        //listObjects.add(horizontalView)
+        listObjects.add(headerTitleModel);
+        listObjects.add(new TodoModel("Meeting Client A", "10.00 - 09.30", "10.00", false));
+        listObjects.add(new TodoModel("Daily Stand Up", "10.00 - 09.30", "10.00", false));
+        listObjects.add(new TodoModel("Get breakfast", "09.00 - 09.30", "09.00", false));
+        listObjects.add(new TodoModel("Drink water", "07.00 - 08.30", "07.00", true));
+        listObjects.add(new TodoModel("Pray subuh", "05.00 - 06.30", "05.00", true));
 
         todoAdapter.setData(listObjects);
         todoRecyclerView.setAdapter(todoAdapter);

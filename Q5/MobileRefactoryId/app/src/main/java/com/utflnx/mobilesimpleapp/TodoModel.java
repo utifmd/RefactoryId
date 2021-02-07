@@ -6,6 +6,14 @@ public class TodoModel extends ListObject {
     private String time;
     private boolean complete;
 
+    public TodoModel(){}
+    public TodoModel(String title, String subtitle, String time, boolean complete) {
+        this.title = title;
+        this.subtitle = subtitle;
+        this.time = time;
+        this.complete = complete;
+    }
+
     public String getTitle() {
         return title;
     }

@@ -1,10 +1,12 @@
 package com.utflnx.mobilesimpleapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,7 +49,7 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (holder.getItemViewType()){
             case ListObject.TYPE_TITLE:
-                HeaderTitleModel headerTitleModel = ((HeaderTitleModelObject) listObjectList).getModel();
+                HeaderTitleModel headerTitleModel = ((HeaderTitleModelObject) listObjectList.get(position)).getModel();
                 ((TitleViewHolder) holder).bind(headerTitleModel, position);
                 break;
             case ListObject.TYPE_CALENDAR:
@@ -75,6 +77,8 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     static class GeneralViewHolder extends RecyclerView.ViewHolder {
         TextView title, subTitle, time, complete;
+        View backgroundComplete;
+        ImageView ivComplete;
 
         public GeneralViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,15 +86,21 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             subTitle = itemView.findViewById(R.id.textItemSubtitle);
             time = itemView.findViewById(R.id.textTime);
             complete = itemView.findViewById(R.id.textComplete);
+            backgroundComplete = itemView.findViewById(R.id.backgroundComplete);
+            ivComplete = itemView.findViewById(R.id.ivComplete);
         }
 
+        @SuppressLint("ResourceAsColor")
         public void bind(TodoModel model, int position) {
             title.setText(model.getTitle());
             subTitle.setText(model.getSubtitle());
             time.setText(model.getTime());
 
-            if (model.isComplete())
-                complete.setBackgroundColor(Color.GRAY);
+            if (model.isComplete()) {
+                complete.setTextColor(R.color.tx_complete);
+                ivComplete.setColorFilter(R.color.tx_complete);
+                backgroundComplete.setBackgroundResource(R.color.bg_complete);
+            }
         }
     }
 
