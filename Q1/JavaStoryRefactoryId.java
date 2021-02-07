@@ -2,14 +2,7 @@
 import java.util.*;
 
 class JavaStoryRefactoryId{
-	public static String pad(String source, int targetLength, String pad) {
-		StringBuilder result = new StringBuilder( source );
-		for( int i = source.length(); i < targetLength; i+=pad.length() ) {
-		  result.append(pad);
-		}
-		return result.toString();
-	  }
-
+	
 	public static void main(String args[]){	
 		Scanner scanner = new Scanner(System.in); // System.out.print("Hello "+ args[0]);
 
@@ -22,19 +15,20 @@ class JavaStoryRefactoryId{
 		System.out.print("Enter cashier name: ");
 		String strCashier = scanner.nextLine();// "Jokowi dodo";
 		
-		List<String> mapItem = new ArrayList<>();
+		HashMap<String, String> mapItem = new HashMap<>();
 
 		while(true) {
 			System.out.print("Enter item: ");
-			String masakan = scanner.nextLine(); //"Nasi";
-            mapItem.add(masakan);
+			String food = scanner.nextLine(); //"Nasi";
+			System.out.print("Enter "+food+" price: ");
+			String price = scanner.nextLine(); //"Nasi";
+            
+			mapItem.put(food, price);
 
-			if(masakan.equals("exit")) {
+			if(food.equals("exit") || price.equals("exit")) {
 				break;
 			}
 		}
-
-		// String arr[] = {strItem};
 	
 		System.out.println(String.format("%30s", "=============================="));
 		System.out.printf("%27s %n", wrapText(strResto, 30));
@@ -42,8 +36,8 @@ class JavaStoryRefactoryId{
 		System.out.printf("%-12s %18s %n", "Nama Kasir: ", wrapText(strCashier, 18));
 		System.out.println(String.format("%30s", "=============================="));
 		
-		for(int i = 0; i < mapItem.size(); i++){
-			System.out.println(String.format("%-"+(30-mapItem.get(i).length())+"s", mapItem.get(i)).replaceAll("\\s(?=\\s+$|$)", ".")+mapItem.get(i));
+		for(Map.Entry item : mapItem.entrySet()) { //(int i = 0; i < mapItem.size(); i++){
+			System.out.println(String.format("%-"+(30-item.getKey().toString().length())+"s", item.getKey()).replaceAll("\\s(?=\\s+$|$)", ".")+item.getValue());
 		}
 	}
 
