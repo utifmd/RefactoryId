@@ -1,4 +1,4 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.extension;
 
 public abstract class ListObject {
     public static final int TYPE_GENERAL = 0;

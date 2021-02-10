@@ -1,4 +1,4 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.extension;
 
 import android.annotation.SuppressLint;
 

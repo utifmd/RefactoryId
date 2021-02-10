@@ -1,4 +1,4 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.model;
 
 public class HeaderTitleModel{
     private String title;

@@ -6,6 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.utflnx.mobilesimpleapp.extension.HomeModule;
+import com.utflnx.mobilesimpleapp.extension.ListObject;
+import com.utflnx.mobilesimpleapp.extension.TodoAdapter;
+import com.utflnx.mobilesimpleapp.model.HeaderCalendarModel;
+import com.utflnx.mobilesimpleapp.model.HeaderCalendarModelObject;
+import com.utflnx.mobilesimpleapp.model.HeaderTitleModel;
+import com.utflnx.mobilesimpleapp.model.HeaderTitleModelObject;
+import com.utflnx.mobilesimpleapp.model.TodoModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +35,6 @@ public class MainActivity extends AppCompatActivity{
         todoRecyclerView.setHasFixedSize(true);
 
         List<ListObject> listObjects = new ArrayList<>();
-        TodoModel item1 = new TodoModel();
-        TodoModel item2 = new TodoModel();
 
         HeaderCalendarModelObject headerCalendarModel = new HeaderCalendarModelObject();
         headerCalendarModel.setModel(new HeaderCalendarModel(HomeModule.currentDate()));

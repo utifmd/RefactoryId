@@ -1,6 +1,8 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.model;
 
-public class HeaderTitleModelObject extends ListObject{
+import com.utflnx.mobilesimpleapp.extension.ListObject;
+
+public class HeaderTitleModelObject extends ListObject {
     private HeaderTitleModel model;
 
     public HeaderTitleModel getModel() {

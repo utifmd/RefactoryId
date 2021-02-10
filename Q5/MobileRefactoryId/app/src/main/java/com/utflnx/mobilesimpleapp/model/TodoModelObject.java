@@ -1,6 +1,8 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.model;
 
-public class TodoModelObject extends ListObject{
+import com.utflnx.mobilesimpleapp.extension.ListObject;
+
+public class TodoModelObject extends ListObject {
     private TodoModel todoModel;
 
     public TodoModel getTodoModel() {

@@ -1,8 +1,7 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.extension;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.utflnx.mobilesimpleapp.R;
+import com.utflnx.mobilesimpleapp.model.HeaderCalendarModel;
+import com.utflnx.mobilesimpleapp.model.HeaderCalendarModelObject;
+import com.utflnx.mobilesimpleapp.model.HeaderTitleModel;
+import com.utflnx.mobilesimpleapp.model.HeaderTitleModelObject;
+import com.utflnx.mobilesimpleapp.model.TodoModel;
+import com.utflnx.mobilesimpleapp.model.TodoModelObject;
 
 import java.util.List;
 
@@ -57,7 +64,7 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 ((CalendarViewHolder) holder).bind(headerCalendarModel, position);
                 break;
             case ListObject.TYPE_GENERAL:
-                TodoModel todoModel = (TodoModel) listObjectList.get(position);
+                TodoModel todoModel = ((TodoModelObject) listObjectList.get(position)).getTodoModel();
                 ((GeneralViewHolder) holder).bind(todoModel, position);
                 break;
             default:

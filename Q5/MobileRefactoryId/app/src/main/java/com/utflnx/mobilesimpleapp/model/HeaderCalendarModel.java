@@ -1,4 +1,4 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.model;
 
 public class HeaderCalendarModel{
     private String title;

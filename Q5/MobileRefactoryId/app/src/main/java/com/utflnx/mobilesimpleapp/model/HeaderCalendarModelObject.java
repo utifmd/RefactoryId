@@ -1,4 +1,6 @@
-package com.utflnx.mobilesimpleapp;
+package com.utflnx.mobilesimpleapp.model;
+
+import com.utflnx.mobilesimpleapp.extension.ListObject;
 
 public class HeaderCalendarModelObject extends ListObject {
     private HeaderCalendarModel model;
