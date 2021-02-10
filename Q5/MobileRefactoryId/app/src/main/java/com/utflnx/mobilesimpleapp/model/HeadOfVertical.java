@@ -2,11 +2,11 @@ package com.utflnx.mobilesimpleapp.model;
 
 import com.utflnx.mobilesimpleapp.extension.ListObject;
 
-public class HeaderCalendarModel extends ListObject {
+public class HeadOfVertical extends ListObject {
     private String title;
 
-    public HeaderCalendarModel() {}
-    public HeaderCalendarModel(String title) {
+    public HeadOfVertical() {}
+    public HeadOfVertical(String title) {
         this.title = title;
     }
 
@@ -20,6 +20,6 @@ public class HeaderCalendarModel extends ListObject {
 
     @Override
     public int getViewType() {
-        return TYPE_CALENDAR;
+        return TYPE_TITLE;
     }
 }

@@ -2,12 +2,10 @@ package com.utflnx.mobilesimpleapp.extension;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.utflnx.mobilesimpleapp.R;
-import com.utflnx.mobilesimpleapp.model.HeaderCalendarModel;
-import com.utflnx.mobilesimpleapp.model.HeaderTitleModel;
+import com.utflnx.mobilesimpleapp.model.HeadOfHorizon;
+import com.utflnx.mobilesimpleapp.model.HeadOfVertical;
 import com.utflnx.mobilesimpleapp.model.HorizonTodoModel;
 import com.utflnx.mobilesimpleapp.model.HorizonTodoModelObject;
 import com.utflnx.mobilesimpleapp.model.TodoModel;
@@ -63,12 +61,12 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (holder.getItemViewType()){
             case ListObject.TYPE_TITLE:
-                HeaderTitleModel headerTitleModel = ((HeaderTitleModel)listObjectList.get(position));
-                ((TitleViewHolder) holder).bind(headerTitleModel, position);
+                HeadOfVertical headOfVertical = ((HeadOfVertical)listObjectList.get(position));
+                ((TitleViewHolder) holder).bind(headOfVertical, position);
                 break;
             case ListObject.TYPE_CALENDAR:
-                HeaderCalendarModel headerCalendarModel = ((HeaderCalendarModel) listObjectList.get(position));
-                ((CalendarViewHolder) holder).bind(headerCalendarModel, position);
+                HeadOfHorizon headOfHorizon = ((HeadOfHorizon) listObjectList.get(position));
+                ((CalendarViewHolder) holder).bind(headOfHorizon, position);
                 break;
             case ListObject.TYPE_GENERAL:
                 TodoModel todoModel = ((TodoModel) listObjectList.get(position));
@@ -149,7 +147,7 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             title = itemView.findViewById(R.id.textTitle);
         }
 
-        public void bind(HeaderTitleModel model, int position) {
+        public void bind(HeadOfVertical model, int position) {
             title.setText(model.getTitle());
         }
     }
@@ -162,7 +160,7 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             title = itemView.findViewById(R.id.textTitle);
         }
 
-        public void bind(HeaderCalendarModel model, int position) {
+        public void bind(HeadOfHorizon model, int position) {
             title.setText(model.getTitle());
         }
     }
