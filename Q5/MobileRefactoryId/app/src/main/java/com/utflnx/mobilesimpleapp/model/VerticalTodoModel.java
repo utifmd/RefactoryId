@@ -2,14 +2,14 @@ package com.utflnx.mobilesimpleapp.model;
 
 import com.utflnx.mobilesimpleapp.extension.ListObject;
 
-public class TodoModel extends ListObject{
+public class VerticalTodoModel extends ListObject{
     private String title;
     private String subtitle;
     private String time;
     private boolean complete;
 
-    public TodoModel(){}
-    public TodoModel(String title, String subtitle, String time, boolean complete) {
+    public VerticalTodoModel(){}
+    public VerticalTodoModel(String title, String subtitle, String time, boolean complete) {
         this.title = title;
         this.subtitle = subtitle;
         this.time = time;

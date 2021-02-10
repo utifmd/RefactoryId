@@ -2,10 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="14dp"
+        android:background="#EDF0F7"/>
     <TextView android:id="@+id/textTitle"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:padding="8dp"
+        android:paddingVertical="18dp"
+        android:paddingHorizontal="16dp"
         android:text="@string/task_list"
         android:textColor="#525C77"
         android:layout_width="wrap_content"

@@ -6,7 +6,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/sun_sept_14_2020"
-        android:padding="8dp"
+        android:paddingVertical="18dp"
+        android:paddingHorizontal="16dp"
         android:textColor="@color/primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

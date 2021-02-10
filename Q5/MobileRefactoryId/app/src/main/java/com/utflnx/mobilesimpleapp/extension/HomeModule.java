@@ -17,8 +17,7 @@ public class HomeModule {
     }
 
     public static String currentDate(){
-        String stringDate = new SimpleDateFormat("dd MMM yyyy").format(date());
 
-        return stringDate.toUpperCase();
+        return new SimpleDateFormat("EEE, MMM dd yyyy").format(date());
     }
 }

@@ -47,12 +47,12 @@
         android:layout_height="match_parent">
         <ImageView
             android:src="@drawable/ic_baseline_settings_24"
-            android:tint="@color/primary"
+            android:tint="#7F8A9C"
             android:layout_width="20dp"
             android:layout_height="20dp"/>
         <TextView
             android:text="@string/setting"
-            android:textColor="@color/primary"
+            android:textColor="#7F8A9C"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

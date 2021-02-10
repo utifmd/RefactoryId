@@ -17,11 +17,11 @@ import com.utflnx.mobilesimpleapp.model.HeadOfHorizon;
 import com.utflnx.mobilesimpleapp.model.HeadOfVertical;
 import com.utflnx.mobilesimpleapp.model.HorizonTodoModel;
 import com.utflnx.mobilesimpleapp.model.HorizonTodoModelObject;
-import com.utflnx.mobilesimpleapp.model.TodoModel;
+import com.utflnx.mobilesimpleapp.model.VerticalTodoModel;
 
 import java.util.List;
 
-public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class VerticalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final String TAG = getClass().getSimpleName();
     private List<ListObject> listObjectList;
     private final Context mContext;
@@ -32,7 +32,7 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public TodoAdapter(Context context) {
+    public VerticalAdapter(Context context) {
         this.mContext = context;
     }
 
@@ -40,15 +40,15 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == ListObject.TYPE_TITLE) {
             return new TitleViewHolder(
-                    LayoutInflater.from(mContext).inflate(R.layout.item_title, parent, false)
+                    LayoutInflater.from(mContext).inflate(R.layout.item_head_of_vertical, parent, false)
             );
         } else if (viewType == ListObject.TYPE_CALENDAR) {
             return new CalendarViewHolder(
-                    LayoutInflater.from(mContext).inflate(R.layout.item_calendar, parent, false)
+                    LayoutInflater.from(mContext).inflate(R.layout.item_head_of_horizon, parent, false)
             );
         } else if (viewType == ListObject.TYPE_GENERAL){
             return new GeneralViewHolder(
-                    LayoutInflater.from(mContext).inflate(R.layout.item_general, parent, false)
+                    LayoutInflater.from(mContext).inflate(R.layout.item_vertical, parent, false)
             );
         } else if(viewType == ListObject.TYPE_HORIZONTAL) {
             return new HorizonViewHolder(
@@ -69,8 +69,8 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 ((CalendarViewHolder) holder).bind(headOfHorizon, position);
                 break;
             case ListObject.TYPE_GENERAL:
-                TodoModel todoModel = ((TodoModel) listObjectList.get(position));
-                ((GeneralViewHolder) holder).bind(todoModel, position);
+                VerticalTodoModel verticalTodoModel = ((VerticalTodoModel) listObjectList.get(position));
+                ((GeneralViewHolder) holder).bind(verticalTodoModel, position);
                 break;
             case ListObject.TYPE_HORIZONTAL:
                 List<HorizonTodoModel> horizonTodoModel = ((HorizonTodoModelObject) listObjectList.get(position)).getModelList();
@@ -108,7 +108,7 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
         @SuppressLint("ResourceAsColor")
-        public void bind(TodoModel model, int position) {
+        public void bind(VerticalTodoModel model, int position) {
             title.setText(model.getTitle());
             subTitle.setText(model.getSubtitle());
             time.setText(model.getTime());

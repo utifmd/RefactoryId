@@ -30,7 +30,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="6dp"/>
-        <TextView
+        <TextView android:id="@+id/tv_notify"
             android:textSize="20sp"
             android:text="@string/_2_task_for_today"
             android:textStyle="bold"
