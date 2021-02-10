@@ -37,21 +37,24 @@ public class MainActivity extends AppCompatActivity{
         List<ListObject> listObjects = new ArrayList<>();
 
         HeaderCalendarModel headerCalendarModel = new HeaderCalendarModel(HomeModule.currentDate());
-        HeaderTitleModel headerTitleModel = new HeaderTitleModel("Task List");
-
-
         listObjects.add(headerCalendarModel);
-        List<HorizonTodoModel> horizonTodoModels = new ArrayList<>();
 
+        List<HorizonTodoModel> horizonTodoModels = new ArrayList<>();
         horizonTodoModels.add(new HorizonTodoModel("S", "10", false));
         horizonTodoModels.add(new HorizonTodoModel("S", "11", true));
         horizonTodoModels.add(new HorizonTodoModel("R", "12", false));
-
+        horizonTodoModels.add(new HorizonTodoModel("K", "13", false));
+        horizonTodoModels.add(new HorizonTodoModel("J", "14", false));
+        horizonTodoModels.add(new HorizonTodoModel("S", "15", false));
+        horizonTodoModels.add(new HorizonTodoModel("M", "16", false));
+        horizonTodoModels.add(new HorizonTodoModel("S", "17", false));
+        horizonTodoModels.add(new HorizonTodoModel("S", "18", true));
+        horizonTodoModels.add(new HorizonTodoModel("R", "19", false));
         listObjects.add(new HorizonTodoModelObject(horizonTodoModels));
-//        listObjects.add(new HorizonTodoModel("S", "10", false));
-//        listObjects.add(new HorizonTodoModel("S", "11", true));
-//        listObjects.add(new HorizonTodoModel("R", "12", false));
+
+        HeaderTitleModel headerTitleModel = new HeaderTitleModel("Task List");
         listObjects.add(headerTitleModel);
+
         listObjects.add(new TodoModel("Meeting Client A", "10.00 - 09.30", "10.00", false));
         listObjects.add(new TodoModel("Daily Stand Up", "10.00 - 09.30", "10.00", false));
         listObjects.add(new TodoModel("Get breakfast", "09.00 - 09.30", "09.00", false));

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.utflnx.mobilesimpleapp.R;
@@ -123,36 +124,20 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     static class HorizonViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout baseHorizontalView; // TextView dotSign, textDay, textDate;
+        RecyclerView recyclerViewHor;
 
         public HorizonViewHolder(@NonNull View itemView) {
             super(itemView);
-            baseHorizontalView = itemView.findViewById(R.id.baseHorizontalView);
-
-//            horizonItem = itemView.findViewById(R.id.horizon_item);
-//            dotSign = itemView.findViewById(R.id.dot_sign);
-//            textDay = itemView.findViewById(R.id.text_day);
-//            textDate = itemView.findViewById(R.id.text_date);
+            recyclerViewHor = itemView.findViewById(R.id.rv_horizon);
         }
 
         public void bind(Context context, List<HorizonTodoModel> modelList, int position) {
-            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(33, 83);
-            param.setMargins(5, 5, 5, 5);
+            HorizonAdapter horAdapter = new HorizonAdapter(context);
+            recyclerViewHor.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+            recyclerViewHor.setHasFixedSize(true);
 
-            for (int i = 0; i < modelList.size(); i++){
-                // Log.d("HorizonViewHolder", "modelList size: "+i);
-                View itemInner = View.inflate(context, R.layout.item_inner_horizontal, null);
-                itemInner.setLayoutParams(param);
-                ((TextView)itemInner.findViewById(R.id.text_day)).setText(modelList.get(i).getDay());
-                ((TextView)itemInner.findViewById(R.id.text_date)).setText(modelList.get(i).getDate());
-                if (modelList.get(i).isDot()) itemInner.findViewById(R.id.dot_sign).setVisibility(View.VISIBLE);
-
-                baseHorizontalView.addView(itemInner);
-            }
-
-//            textDay.setText(model.getDay());
-//            textDay.setText(model.getDate());
-//            if (model.isDot()) dotSign.setVisibility(View.VISIBLE);
+            horAdapter.setData(modelList);
+            recyclerViewHor.setAdapter(horAdapter);
         }
     }
 
