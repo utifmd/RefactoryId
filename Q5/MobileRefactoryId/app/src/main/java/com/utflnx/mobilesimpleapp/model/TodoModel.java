@@ -2,7 +2,7 @@ package com.utflnx.mobilesimpleapp.model;
 
 import com.utflnx.mobilesimpleapp.extension.ListObject;
 
-public class TodoModel{
+public class TodoModel extends ListObject{
     private String title;
     private String subtitle;
     private String time;
@@ -46,5 +46,10 @@ public class TodoModel{
 
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+
+    @Override
+    public int getViewType() {
+        return TYPE_GENERAL;
     }
 }

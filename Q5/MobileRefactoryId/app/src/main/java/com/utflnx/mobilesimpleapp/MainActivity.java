@@ -10,9 +10,9 @@ import com.utflnx.mobilesimpleapp.extension.HomeModule;
 import com.utflnx.mobilesimpleapp.extension.ListObject;
 import com.utflnx.mobilesimpleapp.extension.TodoAdapter;
 import com.utflnx.mobilesimpleapp.model.HeaderCalendarModel;
-import com.utflnx.mobilesimpleapp.model.HeaderCalendarModelObject;
 import com.utflnx.mobilesimpleapp.model.HeaderTitleModel;
-import com.utflnx.mobilesimpleapp.model.HeaderTitleModelObject;
+import com.utflnx.mobilesimpleapp.model.HorizonTodoModel;
+import com.utflnx.mobilesimpleapp.model.HorizonTodoModelObject;
 import com.utflnx.mobilesimpleapp.model.TodoModel;
 
 import java.util.ArrayList;
@@ -36,14 +36,21 @@ public class MainActivity extends AppCompatActivity{
 
         List<ListObject> listObjects = new ArrayList<>();
 
-        HeaderCalendarModelObject headerCalendarModel = new HeaderCalendarModelObject();
-        headerCalendarModel.setModel(new HeaderCalendarModel(HomeModule.currentDate()));
+        HeaderCalendarModel headerCalendarModel = new HeaderCalendarModel(HomeModule.currentDate());
+        HeaderTitleModel headerTitleModel = new HeaderTitleModel("Task List");
 
-        HeaderTitleModelObject headerTitleModel = new HeaderTitleModelObject();
-        headerTitleModel.setModel(new HeaderTitleModel("Task List"));
 
         listObjects.add(headerCalendarModel);
-        //listObjects.add(horizontalView)
+        List<HorizonTodoModel> horizonTodoModels = new ArrayList<>();
+
+        horizonTodoModels.add(new HorizonTodoModel("S", "10", false));
+        horizonTodoModels.add(new HorizonTodoModel("S", "11", true));
+        horizonTodoModels.add(new HorizonTodoModel("R", "12", false));
+
+        listObjects.add(new HorizonTodoModelObject(horizonTodoModels));
+//        listObjects.add(new HorizonTodoModel("S", "10", false));
+//        listObjects.add(new HorizonTodoModel("S", "11", true));
+//        listObjects.add(new HorizonTodoModel("R", "12", false));
         listObjects.add(headerTitleModel);
         listObjects.add(new TodoModel("Meeting Client A", "10.00 - 09.30", "10.00", false));
         listObjects.add(new TodoModel("Daily Stand Up", "10.00 - 09.30", "10.00", false));

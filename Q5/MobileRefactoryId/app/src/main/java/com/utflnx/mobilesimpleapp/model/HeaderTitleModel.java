@@ -1,6 +1,8 @@
 package com.utflnx.mobilesimpleapp.model;
 
-public class HeaderTitleModel{
+import com.utflnx.mobilesimpleapp.extension.ListObject;
+
+public class HeaderTitleModel extends ListObject {
     private String title;
 
     public HeaderTitleModel() {}
@@ -14,5 +16,10 @@ public class HeaderTitleModel{
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public int getViewType() {
+        return TYPE_TITLE;
     }
 }

@@ -1,6 +1,8 @@
 package com.utflnx.mobilesimpleapp.model;
 
-public class HeaderCalendarModel{
+import com.utflnx.mobilesimpleapp.extension.ListObject;
+
+public class HeaderCalendarModel extends ListObject {
     private String title;
 
     public HeaderCalendarModel() {}
@@ -14,5 +16,10 @@ public class HeaderCalendarModel{
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public int getViewType() {
+        return TYPE_CALENDAR;
     }
 }
